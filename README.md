@@ -9,7 +9,7 @@
 支持多种请求参数，点击[这里](#完整的请求配置)查看完整的请求配置
 
 ```js
-import { createHttpClient } from "https://deno.land/x/ky@v0.0.1/mod.ts";
+import { createHttpClient } from "https://deno.land/x/urllib@v0.0.1/mod.ts";
 
 const client = createHttpClient({
   baseURL: "https://example.com",
