@@ -1,13 +1,3 @@
 {
-  "imports": {
-    "oak": "https://deno.land/x/oak@v10.6.0/mod.ts",
-    "oak/": "https://deno.land/x/oak@v10.6.0/",
-
-    "encoding/": "https://deno.land/std@0.152.0/encoding/",
-    "hash/": "https://deno.land/std@0.152.0/hash/",
-
-    "app/": "./app/",
-    "services/": "./services/",
-    "libraries/": "./libraries/"
-  }
+  "imports": {}
 }
