@@ -1,7 +1,12 @@
-import { buildURL } from "../common/buildURL.ts";
-import type { HttpRequestOptions } from "../types/request.ts";
+import { buildURL } from "../common/mod.ts";
+import type { HttpRequestOptions } from "../types/mod.ts";
 
-export const resolveRequest = (
+/**
+ * 创建 Request 对象
+ *
+ * @internal
+ */
+export const createHttpRequest = (
   init: RequestInfo | URL | undefined,
   options: HttpRequestOptions,
 ): Request => {
