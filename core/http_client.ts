@@ -29,8 +29,8 @@ export class HttpClient {
    * 拦截器
    */
   interceptors = {
-    config: new HttpInterceptorManager<HttpRequestConfig>(),
-    request: new HttpInterceptorManager<HttpRequestOptions>(),
+    config: new HttpInterceptorManager<HttpRequestOptions>(),
+    request: new HttpInterceptorManager<Request>(),
     response: new HttpInterceptorManager<HttpResponse<any>>(),
   } as const;
 
