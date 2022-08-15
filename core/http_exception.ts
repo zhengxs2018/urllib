@@ -63,4 +63,8 @@ export class HttpException extends Error {
 
     throw HttpException.from(error, code, config, request, response);
   }
+
+  static is(value: unknown): value is HttpException {
+    return value ? value instanceof HttpException : false;
+  }
 }

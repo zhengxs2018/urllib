@@ -1,11 +1,13 @@
-import { mergeHeaders } from "../common/mergeHeaders.ts";
-
-import { HttpClientOptions } from "../types/client.ts";
-import type {
+import { mergeHeaders } from "../common/mod.ts";
+import {
+  HttpClientOptions,
   HttpRequestConfig,
   HttpRequestOptions,
-} from "../types/request.ts";
+} from "../types/mod.ts";
 
+/**
+ * @internal
+ */
 export const resolveRequestOptions = (
   options: HttpClientOptions,
   config: HttpRequestConfig,

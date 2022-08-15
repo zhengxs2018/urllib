@@ -1,5 +1,5 @@
 // deno-lint-ignore-file
-import { HttpRequestOptions } from "../types/request.ts";
+import { HttpRequestOptions } from "../types/mod.ts";
 
 export const defaultTransformResponse = (
   response: Response,

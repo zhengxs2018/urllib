@@ -1,8 +1,10 @@
-import type { HttpClientConfig, HttpClientOptions } from "../types/client.ts";
+import { defaultTransformResponse } from "../common/mod.ts";
+import type { HttpClientConfig, HttpClientOptions } from "../types/mod.ts";
 
-import { defaultTransformResponse } from "./defaultTransformResponse.ts";
-
-export const resolveHttpClientOptions = ({
+/**
+ * @internal
+ */
+export const resolveClientOptions = ({
   baseURL,
   method = "GET",
   headers,

@@ -2,41 +2,37 @@
 
 > ⚠️ 注意: 本项目仅供学习，API 并不稳定，请勿用于正式环境
 
-基于 [deno](https://deno.land/) 和 [Fetch](https://developer.mozilla.org/zh-CN/docs/Web/API/Fetch_API) 的一个 HTTP 请求库。
+基于 [deno](https://deno.land/) 和
+[Fetch](https://developer.mozilla.org/zh-CN/docs/Web/API/Fetch_API) 的一个 HTTP
+请求库。
 
 ## 使用
 
-支持多种请求参数，点击[这里](#完整的请求配置)查看完整的请求配置
+支持多种请求参数，点击[这里](#请求配置)查看完整的请求配置
 
 ```js
-import { createHttpClient } from "https://deno.land/x/urllib@v0.0.1/mod.ts";
+import { createHttpClient } from "https://deno.land/x/urllib/mod.ts";
 
 const client = createHttpClient({
   baseURL: "https://example.com",
 });
 
 // 支持字符串
-await client.withRequest("/api/users/123", {
-  method: "GET",
-});
+await client.withRequest("/api/users/123");
 
 // 支持 URL 对象
-const requestURL = new URL("/api/users/123", "https://example.com");
-
-await client.withRequest(requestURL, {
-  method: "GET",
-});
+await client.withRequest(new URL("/api/users/123", "https://example.com"));
 
 // 支持请求对象
-const request = new Request({
-  url: "https://example.com",
-  method: "GET",
-});
-
-await client.withRequest(request);
+await client.withRequest(
+  new Request({
+    url: "https://example.com",
+    method: "GET",
+  }),
+);
 ```
 
-### 拦截器
+## 拦截器
 
 参考 [Axios](https://github.com/axios/axios) 实现的拦截器，但分离了 `config` 和 `request`。
 
@@ -57,7 +53,7 @@ client.interceptors.response.use((response) => {
 });
 ```
 
-### 完整的请求配置
+## 请求配置
 
 ```ts
 type HttpRequestConfig = {
@@ -72,7 +68,7 @@ type HttpRequestConfig = {
   validateStatus?: (status: number, response: Response) => boolean;
   transformResponse?: [
     (response: Response, config: HttpRequestOptions) => Promise<any> | any,
-    ((error: Error) => never) | undefined
+    ((error: Error) => never) | undefined,
   ];
   signal?: AbortSignal | null;
 };

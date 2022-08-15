@@ -6,7 +6,6 @@ export interface HttpResponse<T extends any> {
   request: Request;
   response: Response;
   headers: Headers;
-  status: number;
   data: T;
-  throw(reason: string | Error, code?: number): never;
+  throwError(reason: string | Error, code?: number): never;
 }
